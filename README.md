@@ -18,7 +18,7 @@ The system learns to:
 - Produce coherent captions using sequence modeling  
 - Provide interpretable attention heatmaps
   
-> [!🎯 Core Objective]
+> [!NOTE]
 > 
 > Given an image → Generate a grammatically meaningful caption describing the scene.
 
@@ -282,6 +282,7 @@ This provides interpretability to the captioning process.
 ## ⭐ If You Like This Project
 
 Give it a ⭐ on GitHub and feel free to fork or contribute.
+
 
 
 
