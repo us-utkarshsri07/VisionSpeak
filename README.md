@@ -249,7 +249,7 @@ Instead of greedy decoding, **beam search** is implemented.
 Evaluated on 200 validation samples.
 
 <p align="center">
-  <img src="eval_result.png" width="100%">
+  <img src="outputs/eval_result.png" width="100%">
 </p>
 
 ### Interpretation
@@ -279,6 +279,7 @@ For each predicted word:
 This provides interpretability to the captioning process.
 
 ---
+
 
 
 
