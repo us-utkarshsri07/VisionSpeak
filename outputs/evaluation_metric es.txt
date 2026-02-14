@@ -1,0 +1,6 @@
+BLEU-1: 0.5602
+BLEU-4: 0.1608
+Average Caption Length: 10.89
+Beam Size: 3
+Vocab Size: 5202
+Epochs Trained: 9
