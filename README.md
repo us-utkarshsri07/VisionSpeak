@@ -16,10 +16,10 @@ The system learns to:
 - Extract spatial visual features from an image  
 - Focus on different regions of the image while generating each word  
 - Produce coherent captions using sequence modeling  
-- Provide interpretable attention heatmaps  
-
-### 🎯 Core Objective
-
+- Provide interpretable attention heatmaps
+  
+> [!🎯 Core Objective]
+> 
 > Given an image → Generate a grammatically meaningful caption describing the scene.
 
 This project implements a classical **Encoder–Decoder architecture with Attention**.
@@ -282,6 +282,7 @@ This provides interpretability to the captioning process.
 ## ⭐ If You Like This Project
 
 Give it a ⭐ on GitHub and feel free to fork or contribute.
+
 
 
 
