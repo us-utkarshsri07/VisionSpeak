@@ -26,6 +26,7 @@ This project implements a classical **Encoder–Decoder architecture with Attent
 
 ---
 
+
 ## 🧠 2. Key Concepts (Important Terms)
 
 ### 🔹 Convolutional Neural Network (CNN)
@@ -112,6 +113,146 @@ The system learns to predict the next word conditioned on:
 Instead of training a CNN from scratch, **pre-extracted CNN features** are used.
 
 Each image representation:```Shape: (49, 2048)```
+
+
+Corresponds to:
+
+- 7 × 7 spatial grid  
+- 2048-dimensional feature vector per region  
+
+These allow spatial attention over image regions.
+
+---
+
+### 🔹 4.2 Decoder (LSTM + Attention)
+
+Implemented components:
+
+- Word embedding layer  
+- LSTMCell decoder  
+- Bahdanau attention mechanism  
+- Fully connected vocabulary projection  
+
+#### 🔁 Attention Flow Per Timestep
+
+1. Compute attention weights over 49 spatial regions  
+2. Generate context vector  
+3. Concatenate context + embedding  
+4. Pass through LSTM  
+5. Predict next word  
+
+This allows the model to dynamically focus on relevant image regions while generating words.
+
+---
+
+### 🔹 4.3 Beam Search Decoding
+
+Instead of greedy decoding, **beam search** is implemented.
+
+**Features:**
+
+- Beam size = 3  
+- Log probability scoring  
+- UNK token blocking  
+- Repetition penalty  
+- Early stopping on `<end>`  
+- Attention collection per word  
+
+**Additional Decoding Improvements:**
+
+- `<unk>` probability forced to -1e9  
+- Immediate repetition prevention  
+- Penalize repeated tokens in sequence  
+
+---
+
+## 🛠️ 5. What Was Implemented
+
+### Core Modules
+
+- Custom `Attention` class  
+- Custom `LSTMDecoder`  
+- Full `CaptionModel` (encoder + decoder)  
+- Beam search decoding  
+- Attention visualization  
+- BLEU evaluation  
+- Dataset preprocessing pipeline  
+- Vocabulary building with frequency threshold  
+- Train/validation split  
+- Model checkpoint saving  
+- JSON prediction export  
+- Evaluation metrics export  
+
+---
+
+### Engineering Additions
+
+- Repetition control in beam search  
+- UNK token suppression  
+- Attention length alignment fix  
+- Gradient-safe inference  
+- Visualization notebooks  
+- Modular project structure  
+
+---
+
+## 📊 6. Training Details
+
+- **Loss:** Cross Entropy  
+- **Optimizer:** Adam  
+- **Epochs trained:** 12  
+- **Vocabulary size:** 5202  
+- **Frequency threshold:** 2  
+- **Beam size:** 3  
+
+### Observed Training Behavior
+
+- Training loss consistently decreased  
+- Validation loss decreased initially  
+- Slight overfitting after epoch 7  
+- Best model saved based on validation loss  
+
+---
+
+## 📈 7. Evaluation Results
+
+Evaluated on 200 validation samples.
+
+- **BLEU-1:** 0.56  
+- **BLEU-4:** 0.16  
+- **Average Caption Length:** ~10.9  
+
+### Interpretation
+
+- BLEU-1 indicates strong word-level overlap.  
+- BLEU-4 is moderate due to:
+  - Limited dataset size  
+  - Basic LSTM decoder  
+  - No length normalization  
+  - No advanced regularization  
+
+---
+
+## 🔥 8. Attention Visualization
+
+For each predicted word:
+
+- The model generates attention weights over 49 regions  
+- These weights are upsampled and overlaid on the image  
+- Heatmaps show spatial alignment between word and region  
+
+**Example:**
+
+- Word `"dog"` → attention focuses on dog region  
+- Word `"riding"` → attention focuses on subject motion area  
+
+This provides interpretability to the captioning process.
+
+---
+
+
+
+
 
 
 
