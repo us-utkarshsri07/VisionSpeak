@@ -2,7 +2,7 @@
 ### Attention-Based Image Captioning System (CNN + LSTM + Additive Attention)
 
 <p align="center">
-  <img src="outputs/Plot.png" width="100%">
+  <img src="outputs/Prediction.png" width="100%">
 </p>
 
 ---
@@ -282,6 +282,7 @@ This provides interpretability to the captioning process.
 ## ⭐ If You Like This Project
 
 Give it a ⭐ on GitHub and feel free to fork or contribute.
+
 
 
 
