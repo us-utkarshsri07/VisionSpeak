@@ -26,6 +26,33 @@ This project implements a classical **Encoder–Decoder architecture with Attent
 
 ---
 
+## 📌 Structure Explanation
+
+| Folder / File | Purpose |
+|--------------|--------|
+|`checkpoints/`| Saved trained model weights|
+| `data/raaw/` | Original dataset images and captions |
+| `data/processed/` | Vocabulary JSON and encoded captions |
+| `data/features/` | Pre-extracted CNN spatial features (train / val) |
+| `notebooks/01_data_analysis.ipynb` | Data Exploration |
+| `notebooks/02_attention_visualization.ipynb` | Attention visualization |
+| `notebooks/03_predictions.ipynb` | Sample predictions display |
+| `outputs` | Saved predictions, evaluation results, plots |
+| `reports/` | Evaluation outputs, plots |
+| `src/models/attention.py` | Additive Attention implementation |
+| `src/models/lstm_decoder.py` | LSTM decoder with attention  |
+| `src/models/caption_model.py` | Encoder-decoder wrapper model  |
+| `src/config.py` | Paths, constants, hyperparameters |
+| `src/preprocessing.py` | Vocabulary building and encoding |
+| `src/dataset.py` | Dataset Loader |
+| `src/feature_extraction.py` | CNN feature extraction pipline|
+| `src/train.py` | Model training |
+| `src/inference.py` | Beam search caption generation |
+| `src/evaluate.py`| Script to run training/evaluation |
+| `requirements.txt` | Dependencies |
+| `README.md` | Project documentation |
+| `.gitignore` | Ignore datasets, models, cache |
+
 
 ## 🧠 2. Key Concepts (Important Terms)
 
@@ -249,6 +276,7 @@ For each predicted word:
 This provides interpretability to the captioning process.
 
 ---
+
 
 
 
