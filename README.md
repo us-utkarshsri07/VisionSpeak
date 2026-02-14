@@ -37,7 +37,8 @@ It extracts hierarchical spatial features using convolutional filters.
 In this project:
 
 - A pretrained CNN is used to extract image features.
-- Each image is converted into a spatial feature map of shape:
+- Each image is converted into a spatial feature map of shape: ```(49, 2048)```
+
 
 
 
