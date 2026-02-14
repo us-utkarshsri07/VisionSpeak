@@ -162,16 +162,16 @@ Implemented components:
 - Fully connected vocabulary projection  
 
 
-
 > [!IMPORTANT]
-  #### 🔁 Attention Flow Per Timestep
-> 1. Compute attention weights over 49 spatial regions
-> 2. Generate context vector
-> 3. Concatenate context + embedding
-> 4. Pass through LSTM
-> 5. Predict next word
+> ### Attention Flow Per Timestep
+> 1. Compute attention weights over 49 spatial regions  
+> 2. Generate context vector  
+> 3. Concatenate context + embedding  
+> 4. Pass through LSTM  
+> 5. Predict next word  
 >
-> This allows the model to dynamically focus on relevant image regions while generating words.
+> This allows the model to dynamically focus on relevant image regions.
+
  
 
 ---
@@ -279,6 +279,7 @@ For each predicted word:
 This provides interpretability to the captioning process.
 
 ---
+
 
 
 
