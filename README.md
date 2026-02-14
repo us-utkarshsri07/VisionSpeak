@@ -92,17 +92,11 @@ Image captioning is a multimodal task combining:
 - Computer Vision (understanding image content)  
 - Natural Language Processing (generating text)  
 
-Given image \( I \), generate caption:
 
-\[
-S = (w_1, w_2, ..., w_T)
-\]
 
-The probability model:
-
-\[
-P(S|I) = \prod_{t=1}^{T} P(w_t | w_{1:t-1}, I)
-\]
+<p align="center">
+  <img src="Image_captioning.png" width="100%">
+</p>
 
 The system learns to predict the next word conditioned on:
 
@@ -118,6 +112,7 @@ The system learns to predict the next word conditioned on:
 Instead of training a CNN from scratch, **pre-extracted CNN features** are used.
 
 Each image representation:```Shape: (49, 2048)```
+
 
 
 
