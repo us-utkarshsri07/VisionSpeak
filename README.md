@@ -263,7 +263,7 @@ Evaluated on 200 validation samples.
 
 ---
 
-## 🔥 8. Attention Visualization
+## 🔥 Attention Visualization
 
 For each predicted word:
 
@@ -279,6 +279,9 @@ For each predicted word:
 This provides interpretability to the captioning process.
 
 ---
+## ⭐ If You Like This Project
+
+Give it a ⭐ on GitHub and feel free to fork or contribute.
 
 
 
