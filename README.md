@@ -7,7 +7,7 @@
 
 ---
 
-## 📌 1. Project Overview
+## 📌 Project Overview
 
 **VisionSpeak** is a deep learning–based image captioning system that generates natural language descriptions for images.
 
@@ -54,7 +54,7 @@ This project implements a classical **Encoder–Decoder architecture with Attent
 | `.gitignore` | Ignore datasets, models, cache |
 
 
-## 🧠 2. Key Concepts (Important Terms)
+## 🧠 Key Concepts 
 
 ### 🔹 Convolutional Neural Network (CNN)
 
@@ -98,7 +98,8 @@ In this project:
 
 ### 🔹 Attention Mechanism
 
-Attention allows the model to focus on different parts of the image while generating each word.
+***Attention*** is a mechanism that allows the model to selectively focus on the most relevant parts of the input (image features) when generating each output.
+It calculates attention scores that tell the model which parts of the image to pay more attention to at each step in the caption gen process.
 
 Instead of compressing the image into a single vector, attention:
 
@@ -113,7 +114,7 @@ This makes the model:
 
 ---
 
-## 📐 3. Problem Definition
+## 📐 Problem Definition
 
 Image captioning is a multimodal task combining:
 
@@ -133,9 +134,9 @@ The system learns to predict the next word conditioned on:
 
 ---
 
-## 🏗️ 4. Architecture
+## 🏗️ Architecture
 
-### 🔹 4.1 Encoder
+### 🔹  Encoder
 
 Instead of training a CNN from scratch, **pre-extracted CNN features** are used.
 
@@ -151,7 +152,7 @@ These allow spatial attention over image regions.
 
 ---
 
-### 🔹 4.2 Decoder (LSTM + Attention)
+### 🔹 Decoder (LSTM + Attention)
 
 Implemented components:
 
@@ -160,19 +161,21 @@ Implemented components:
 - Bahdanau attention mechanism  
 - Fully connected vocabulary projection  
 
-#### 🔁 Attention Flow Per Timestep
 
-1. Compute attention weights over 49 spatial regions  
-2. Generate context vector  
-3. Concatenate context + embedding  
-4. Pass through LSTM  
-5. Predict next word  
 
-This allows the model to dynamically focus on relevant image regions while generating words.
+> [!IMPORTANT]
+  #### 🔁 Attention Flow Per Timestep
+> 1. Compute attention weights over 49 spatial regions
+> 2. Generate context vector
+> 3. Concatenate context + embedding
+> 4. Pass through LSTM
+> 5. Predict next word
+>
+> This allows the model to dynamically focus on relevant image regions while generating words.
+ 
 
 ---
-
-### 🔹 4.3 Beam Search Decoding
+### 🔹 Beam Search Decoding
 
 Instead of greedy decoding, **beam search** is implemented.
 
@@ -193,7 +196,7 @@ Instead of greedy decoding, **beam search** is implemented.
 
 ---
 
-## 🛠️ 5. What Was Implemented
+## 🛠️ **What Was Implemented**
 
 ### Core Modules
 
@@ -223,7 +226,7 @@ Instead of greedy decoding, **beam search** is implemented.
 
 ---
 
-## 📊 6. Training Details
+## 📊 Training Details
 
 - **Loss:** Cross Entropy  
 - **Optimizer:** Adam  
@@ -241,13 +244,13 @@ Instead of greedy decoding, **beam search** is implemented.
 
 ---
 
-## 📈 7. Evaluation Results
+## 📈  Evaluation Results
 
 Evaluated on 200 validation samples.
 
-- **BLEU-1:** 0.56  
-- **BLEU-4:** 0.16  
-- **Average Caption Length:** ~10.9  
+<p align="center">
+  <img src="eval_result.png" width="100%">
+</p>
 
 ### Interpretation
 
@@ -276,6 +279,7 @@ For each predicted word:
 This provides interpretability to the captioning process.
 
 ---
+
 
 
 
