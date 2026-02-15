@@ -18,7 +18,7 @@ The system learns to:
 - Produce coherent captions using sequence modeling  
 - Provide interpretable attention heatmaps
 
-> [!NOTE]
+> [!IMPORTANT]
 > 
 > Given an image → Generate a grammatically meaningful caption describing the scene.
 
