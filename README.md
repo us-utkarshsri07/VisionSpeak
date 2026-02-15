@@ -25,7 +25,7 @@ The system learns to:
 This project implements a classical **Encoder–Decoder architecture with Attention**.
 
 ---
---
+
   ## Dataset:
   https://huggingface.co/datasets/jxie/flickr8k
 --
@@ -286,6 +286,7 @@ This provides interpretability to the captioning process.
 ## ⭐ If You Like This Project
 
 Give it a ⭐ on GitHub and feel free to fork or contribute.
+
 
 
 
